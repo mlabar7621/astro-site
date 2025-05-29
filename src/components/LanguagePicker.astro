@@ -1,14 +1,19 @@
 ---
+import { getAlternateLanguageLinks } from '@i18n/utils';
 import { languages } from '@i18n/ui';
-import { getRouteFromUrl } from '@i18n/utils';
 
-const route = getRouteFromUrl(Astro.url);
+const currentLocale = Astro.currentLocale;
+const currentPath = Astro.url.pathname;
+
+const links = getAlternateLanguageLinks(currentLocale, currentPath);
 ---
 
 <ul>
-  {Object.entries(languages).map(([lang, label]) => (
-    <li>
-      <a href={`/${lang}/${route || ''}`}>{label}</a>
-    </li>
-  ))}
+  {
+    links.map(({ locale, name, url }) => (
+      <li>
+        <a href={url} lang={locale}>{name}</a>
+      </li>
+    ))
+  }
 </ul>

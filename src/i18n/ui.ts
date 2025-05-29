@@ -1,15 +1,19 @@
 export const languages = {
-  en: 'English',
-  de: 'German',
+  en: { name: 'English', slug: ''},
+  de: { name: 'Deutsch', slug: 'de'},
+  fr: { name: 'Français', slug: 'fr'},
+  ru: { name: 'Русский', slug: 'ru'},
+  be: { name: 'Беларускій', slug: 'be'}
 };
 
-export const defaultLang = 'en';
+export const defaultLocale = 'en';
 
 export const ui_text = {
   en: {
     nav:{
         title: "Personal Site",
         home: "Home",
+        blog: "Blog",
         about: "About"
     }
   },
@@ -17,6 +21,7 @@ export const ui_text = {
     nav:{
         title: "Personelle Seite",
         home: "Heim",
+        blog: "Blog",
         about: "Über Mich"
     }
   },
@@ -24,6 +29,7 @@ export const ui_text = {
     nav:{
         title: "Site Personel",
         home: "Home",
+        blog: "Blog",
         about: "de Moi"
     }
   },
@@ -31,6 +37,7 @@ export const ui_text = {
     nav:{
         title: "Personal Site",
         home: "Home",
+        blog: "Blog",
         about: "About"
     }
   },
@@ -38,6 +45,7 @@ export const ui_text = {
     nav:{
         title: "Personal Site",
         home: "Home",
+        blog: "Blog",
         about: "About"
     }
   }
