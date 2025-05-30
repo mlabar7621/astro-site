@@ -1,9 +1,9 @@
 export const languages = {
-  en: { name: 'English', slug: ''},
-  de: { name: 'Deutsch', slug: 'de'},
-  fr: { name: 'Français', slug: 'fr'},
-  ru: { name: 'Русский', slug: 'ru'},
-  be: { name: 'Беларускій', slug: 'be'}
+  en: { name: 'ENG', slug: '', img: "/src/assets/img/icons/uk.png"},
+  de: { name: 'DEU', slug: 'de', img: "/src/assets/img/icons/deu.png"},
+  fr: { name: 'FRA', slug: 'fr', img: "/src/assets/img/icons/fra.png"},
+  ru: { name: 'РУС', slug: 'ru', img: "/src/assets/img/icons/rus.png"},
+  be: { name: 'БЕЛ', slug: 'be', img: "/src/assets/img/icons/by.png"}
 };
 
 export const defaultLocale = 'en';

@@ -1,23 +1,31 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { ui_text } from '@i18n/ui';
-const ui = ui_text[Astro.currentLocale];
 import LanguagePicker from '@components/LanguagePicker.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const currentLocale  = Astro.currentLocale || Astro.params.locale || 'en';
+
+const ui = ui_text[currentLocale as keyof typeof ui_text];
+const homeURL = getRelativeLocaleUrl(currentLocale, '');
+const blogURL = getRelativeLocaleUrl(currentLocale, 'blog');
+const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{ui.nav.title}</a></h2>
+		<h2><a href={homeURL}>{ui.nav.title}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">{ui.nav.home}</HeaderLink>
-			<HeaderLink href="/blog">{ui.nav.blog}</HeaderLink>
-			<HeaderLink href="/about">{ui.nav.about}</HeaderLink>
+			<HeaderLink href={homeURL}>{ui.nav.home}</HeaderLink>
+			<HeaderLink href={blogURL}>{ui.nav.blog}</HeaderLink>
+			<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
 		</div>
 		<div>
 			<LanguagePicker />
 		</div>
 	</nav>
 </header>
+
 <style>
 	header {
 		margin: 0;
@@ -57,5 +65,6 @@ import LanguagePicker from '@components/LanguagePicker.astro';
 		.social-links {
 			display: none;
 		}
+		
 	}
 </style>
