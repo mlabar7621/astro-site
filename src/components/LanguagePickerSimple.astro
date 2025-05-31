@@ -8,12 +8,12 @@ const links = getAlternateLanguageLinks(currentLocale, currentPath);
 const currentLinks = getCurrentLanguageData(currentLocale);
 ---
 
-<div class="dropdown">
-  <div class="dropdown-button">
+<div>
+  <div class="active">
     <img src={currentLinks.img} />
     {currentLinks.name}
   </div>
-  <div class="dropdown-content">
+  <div class="alternate">
   {
     links.map(({ locale, name, img, url }) => (
       <div>
@@ -28,40 +28,6 @@ const currentLinks = getCurrentLanguageData(currentLocale);
 </div>
 
 <style>
-  .dropdown {
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-  }
-  .dropdown:hover .dropdown-content{
-    display: block;
-    transform: translateY(0);
-    opacity: 100%;
-    pointer-events: auto;
-  }
-  .dropdown-button {
-    display: block;
-    padding: 8px;
-  }
-  .dropdown-content {
-    position: absolute;
-    opacity: 0%;
-    background-color: white;
-    border-radius: 8px;
-    left: -8px;
-    min-width: 125%;
-    text-align: center;
-    padding-bottom: 4px;
-    transform: translateY(-8px);
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 2px 8px rgba(var(--black),2%);
-    pointer-events: none;
-    div {
-      display: inline-flex;
-      white-space: nowrap;
-      margin-top: -1px;
-    }
-  }
   a {
     color: var(--gray-dark);
     text-decoration: none;
