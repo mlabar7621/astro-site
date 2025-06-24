@@ -1,12 +1,15 @@
 ---
 import Layout from '@layouts/BlogPost.astro';
+//this needs a custom layout, the blog post does not cut it
 ---
 
 <Layout
-	title="About Me"
+	title="De Moi"
 	description="Lorem ipsum dolor sit amet"
 	pubDate={new Date('August 08 2021')}
 	heroImage="/blog-placeholder-about.jpg"
+	tag="about-page"
+	draft={false}
 >
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

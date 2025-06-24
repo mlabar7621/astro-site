@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import { slugify } from '@components/utils.ts'
+import type { blogLocales } from '@i18n/locales';
+
+const currentLocale = Astro.currentLocale || Astro.params.locale || 'en';
+const blogLocale = `blog-${currentLocale}`;
+
+const allPosts = (await getCollection(blogLocale as blogLocales));
+const displayedPosts = allPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const allTags = displayedPosts.map((tag) => tag.data.tag.toLowerCase()).flat();
+
+const processedTags = allTags.reduce((acc: { [key: string]: number }, tag) => {
+    //check if tag exists
+    const value = acc[tag] || 0;
+
+    return {
+        ...acc,
+        [tag]: value + 1
+    }
+}, {})
+
+const { showCount } = Astro.props;
+---
+
+<ul class="categories">
+    {
+        Object.entries(processedTags).map(([key, val]) => (
+            <li>
+                <a href={`tag/${slugify(key)}`}>{key} {showCount && `(${val})`}</a>
+            </li>
+        ))
+    }
+</ul>

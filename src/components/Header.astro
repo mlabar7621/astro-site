@@ -77,14 +77,41 @@ const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
+	.open #upper-bar {
+		border-bottom: 1px solid rgb(var(--gray-dark));
+	}
 	#mobile-nav.open {
 		overflow-y: hidden;
-		#mobile-links, #mobile-language-picker { 
+		#mobile-links { 
 			display: block;
+			margin: 10px 0px;
+			a {
+				color: rgb(var(--gray-dark));
+				display: block;
+				margin: 8px 0px;
+			}
+		}
+		#mobile-language-picker {
+			display: block;
+			padding: 5px 0px;
+			border-top: 1px solid rgb(var(--gray-dark));
+			a {
+				border-top: none;
+			}
+			.alternate {
+				margin-left: 5%;
+				display: inline-block;
+			}
 		}
 	}
 	#mobile-links, #mobile-language-picker {
 		display: none;
+	}
+	#mobile-nav {
+		font-size: 22px;
+		.active {
+			text-decoration: none;
+		}
 	}
 	@media (min-width: 601px) {
 		#mobile-nav {

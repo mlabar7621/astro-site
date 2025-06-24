@@ -9,13 +9,12 @@ import FormattedDate from '@components/FormattedDate.astro';
 import { filterPosts } from '@components/utils';
 import '@styles/blog_index.css'
 
-const allPosts = await getCollection('blog-en');
+const allPosts = await getCollection('blog-fr');
 const displayedPosts = filterPosts(allPosts);
-
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -28,7 +27,7 @@ const displayedPosts = filterPosts(allPosts);
 					{
 						displayedPosts.map((post) => (
 							<li>
-								<a href={`/blog/${post.id}/`}>
+								<a href={`/fr/blog/${post.id}/`}>
 									<img width={720} height={360} src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="tag">{post.data.tag}</p>
