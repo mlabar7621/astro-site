@@ -17,6 +17,7 @@ const blogCollections = Object.fromEntries(
 			heroImage: z.string().optional(),
 			tag: z.string(),
 			draft: z.boolean(),
+			rating: z.number(),
       }),
     }),
   ])

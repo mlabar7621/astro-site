@@ -4,13 +4,14 @@ import BaseHead from '@components/BaseHead.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import FormattedDate from '@components/FormattedDate.astro';
+import StarRating from '@components/StarRating.astro';
 
 const currentLocale = Astro.currentLocale || Astro.params.locale;
 
 //as long as headmatter is identical for all languages, 'Props' can be typed by any blog collection
 type Props = CollectionEntry<'blog-en'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, rating} = Astro.props;
 ---
 
 <html lang=`${currentLocale}`>
@@ -50,6 +51,7 @@ const { title, description, pubDate, updatedDate, heroImage} = Astro.props;
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
+				font-size: 24px;
 			}
 			.last-updated-on {
 				font-style: italic;
@@ -66,6 +68,7 @@ const { title, description, pubDate, updatedDate, heroImage} = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
+						<StarRating rating={rating} index={false}/>
 						<div class="date">
 							<FormattedDate date={pubDate} />
 							{

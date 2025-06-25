@@ -30,9 +30,11 @@ ul li:first-child .title {
 ul li img {
     margin-bottom: 0.5rem;
     border-radius: 12px;
+    object-fit: cover;
 }
 ul li a {
     display: block;
+    position: relative;
 }
 .title {
     margin: 0;

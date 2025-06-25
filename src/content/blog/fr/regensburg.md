@@ -1,10 +1,11 @@
 ---
 title: 'Regensbourg'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 2024-06-23
-heroImage: '/blog-placeholder-3.jpg'
+pubDate: 2024-07-23
+heroImage: '/src/assets/img/posts/blog-placeholder-3.jpg'
 tag: 'Voyage'
 draft: false
+rating: 4
 ---
 
 Cette revue doit être en français.

@@ -23,10 +23,10 @@ When adding a new locale, you must create new folders titled with the slug at:
 - src\content\blog\
 - src\pages\
 - src\pages\blog
-
-You must then copy the \tag blog folder into the new \blog\slug folder
+- copy the \tag blog folder into the new \blog\slug folder
 
 You must then manually update/add your new slug in:
 - src\i18n\locales.ts
 - src\i18n\ui.ts
 - every file in \pages\blog
+- add image to src\assets\img\icons
