@@ -17,16 +17,10 @@ This theme is based off of the lovely [Bear Blog](https://github.com/HermanMarti
 
 ## Updates
 
-Due to technical problems, this theme is not entirely modular when it come to language.
+This theme is as modular when it comes to langauges as possible. whenever you add a new one, just edit data in the following locations:
 
-When adding a new locale, you must create new folders titled with the slug at:
-- src\content\blog\
-- src\pages\
-- src\pages\blog
-- copy the \tag blog folder into the new \blog\slug folder
-
-You must then manually update/add your new slug in:
 - src\i18n\locales.ts
 - src\i18n\ui.ts
-- every file in \pages\blog
 - add image to src\assets\img\icons
+
+I have no idea if the code works for languages written right to left or top to bottom.

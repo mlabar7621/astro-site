@@ -1,0 +1,51 @@
+---
+import { locales, type Locales } from '@i18n/locales';
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+export async function getStaticPaths() {
+	return (locales as Locales[]).map((lang) => {
+		return {
+			params: {lang},
+			props: {locale: lang}
+		}
+	})
+}
+
+const { locale } = Astro.props;
+
+//load article info. aliases do not work here.
+const loaders = import.meta.glob('/src/content/base/*/about.md');
+const loader = loaders[`/src/content/base/${locale}/about.md`];
+const Article = await loader() as any;
+---
+
+<style>
+	:global(article img) {
+		width: 50%;
+		float: left;
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+		border-radius: 5%;
+	}
+	article {
+		text-align: justify;
+		text-justify: inter-word;
+	}
+</style>
+
+<html lang=`${locale}`>
+	<head>
+		<BaseHead />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <article>
+                <Article.Content />
+            </article>
+        </main>
+        <Footer />
+    </body>
+</html>

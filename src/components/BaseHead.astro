@@ -2,17 +2,17 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '@styles/global.css';
-import { SITE_TITLE } from '@consts';
+import { ui_text } from '@i18n/ui';
 
 interface Props {
-	title: string;
-	description: string;
 	image?: string;
 }
 
+const locale = Astro.currentLocale;
+const ui = ui_text[locale as keyof typeof ui_text];
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/src/assets/img/posts/blog-placeholder-1.jpg' } = Astro.props;
+const { image = '/src/assets/img/posts/blog-placeholder-1.jpg' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -23,7 +23,7 @@ const { title, description, image = '/src/assets/img/posts/blog-placeholder-1.jp
 <link
 	rel="alternate"
 	type="application/rss+xml"
-	title={SITE_TITLE}
+	title={ui.nav.site_title}
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
@@ -36,20 +36,20 @@ const { title, description, image = '/src/assets/img/posts/blog-placeholder-1.jp
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>{ui.nav.site_title}</title>
+<meta name="title" content={ui.nav.site_title} />
+<meta name="description" content={ui.nav.site_description} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:title" content={ui.nav.site_title} />
+<meta property="og:description" content={ui.nav.site_description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
+<meta property="twitter:title" content={ui.nav.site_title} />
+<meta property="twitter:description" content={ui.nav.site_description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />

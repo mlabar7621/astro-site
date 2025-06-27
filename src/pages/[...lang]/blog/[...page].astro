@@ -1,0 +1,71 @@
+---
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import TagCloud from '@components/TagCloud.astro';
+import StarRating from '@components/StarRating.astro';
+import { getCollection } from 'astro:content';
+import FormattedDate from '@components/FormattedDate.astro';
+import { filterPosts } from '@components/utils';
+import '@styles/blog_index.css'
+import type { PaginateFunction } from 'astro';
+import { locales, blogLocales } from '@i18n/locales';
+import type { Locales, BlogLocales } from '@i18n/locales';
+import Paginator from '@components/Paginator.astro';
+
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+  // Map over locales and collect promises
+  const allPaths = await Promise.all(
+    (locales as Locales[]).map(async (lang) => {
+      const blogLocale = blogLocales[lang] as BlogLocales;
+      const allPosts = await getCollection(blogLocale);
+      const displayedPosts = filterPosts(allPosts);
+      return paginate(displayedPosts, {
+        pageSize: 15,
+        params: { lang },
+        props: { lang },
+      });
+    })
+  );
+  // Flatten the array of arrays
+  return allPaths.flat();
+}
+
+const { page, lang } = Astro.props as { page: any, lang: string};
+---
+
+<!doctype html>
+<html lang=`${lang}`>
+	<head>
+		<BaseHead />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<TagCloud showCount="true"/>
+			<section>
+				<ul>
+					{
+						page.data.map((post: any) => (
+							<li>
+								<a href={`/${lang}/blog/${post.id}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<StarRating rating={post.data.rating} index={true}/>
+									<div class="title-container">
+										<h4 class="title">{post.data.title}</h4>
+										<p class="tag">{post.data.tag}</p>
+									</div>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+			<Paginator prevURL={page.url.prev} nextURL={page.url.next}/>
+		</main>
+		<Footer />
+	</body>
+</html>

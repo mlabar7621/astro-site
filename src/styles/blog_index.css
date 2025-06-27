@@ -47,13 +47,33 @@ ul li a {
 }
 .tag {
     margin: 0px;
+    border: 2px solid rgba(var(--gray));
+    border-radius: 10px;
+    color: rgb(var(--gray));
+    padding: 0px 4px;
+    line-height: initial;
+}
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 ul li a:hover h4,
 ul li a:hover .date {
-    color: rgb(var(--accent));
+    color: var(--accent);
+}
+ul li a:hover .tag {
+    color: var(--accent);
+    border: 2px solid var(--accent);
 }
 ul a:hover img {
     box-shadow: var(--box-shadow);
+}
+.tag-title {
+    text-align: center;
+    span {
+        color: var(--accent-dark);
+    }
 }
 @media (max-width: 720px) {
     ul {
@@ -68,5 +88,17 @@ ul a:hover img {
     }
     ul li:first-child .title {
         font-size: 1.563em;
+    }
+    .date {
+        text-align: left;
+    }
+}
+@media (min-width: 721px) {
+    ul li:first-child .title-container {
+        display: block;
+    }
+    ul li:first-child .tag {
+    width: fit-content;
+    margin: 4px auto 0px;
     }
 }

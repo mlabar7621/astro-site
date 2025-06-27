@@ -1,0 +1,76 @@
+---
+import { slugify, filterPosts} from '@components/utils.ts'
+import { getCollection } from 'astro:content';
+import BaseHead from '@components/BaseHead.astro';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import FormattedDate from '@components/FormattedDate.astro';
+import StarRating from '@components/StarRating.astro';
+import '@styles/blog_index.css';
+import { locales, blogLocales } from '@i18n/locales';
+import type { Locales, BlogLocales } from '@i18n/locales';
+
+export async function getStaticPaths() {
+    const allPaths = await Promise.all(
+        (locales as Locales[]).map(async (lang) => {
+            const blogLocale = blogLocales[lang] as BlogLocales;
+            const allPosts = await getCollection(blogLocale);
+            const displayedPosts = filterPosts(allPosts);
+            const allTags = [
+                ...new Set(displayedPosts.map((post: any) => post.data.tag).flat()),
+            ];
+            return allTags.map((tag) => {
+                const taggedPosts = displayedPosts.filter((post: any) =>
+                    post.data.tag === tag);
+                return {
+                    params: { tag: slugify(tag), lang: lang },
+                    props: {
+                        tagName: tag,
+                        posts: taggedPosts,
+                        locale: lang,
+                    }
+                };
+            });
+        })
+    );
+    return allPaths.flat();
+}
+
+const {posts, tagName, locale} = Astro.props as { posts: any[]; tagName: string; locale: string };
+---
+
+<!doctype html>
+<html lang=`${locale}`>
+	<head>
+		<BaseHead />
+	</head>
+	<body>
+		<Header />
+		<main>
+            <div>
+                <h1 class="tag-title">Posts about my <span>{tagName}</span></h1>
+            </div>
+			<section>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`}>
+									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<StarRating rating={post.data.rating} index={true}/>
+									<div class="title-container">
+										<h4 class="title">{post.data.title}</h4>
+									</div>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -2,15 +2,15 @@
 import { getCollection } from 'astro:content';
 import { slugify } from '@components/utils.ts'
 import { filterPosts } from '@components/utils.ts';
-import type { blogLocales } from '@i18n/locales';
+import type { BlogLocales } from '@i18n/locales';
 
-const currentLocale = Astro.currentLocale || Astro.params.locale || 'en';
+const currentLocale = Astro.currentLocale;
 const blogLocale = `blog-${currentLocale}`;
 
-const allPosts = (await getCollection(blogLocale as blogLocales));
+const allPosts = (await getCollection(blogLocale as BlogLocales));
 const displayedPosts = filterPosts(allPosts);
 
-const allTags = displayedPosts.map((tag) => tag.data.tag).flat();
+const allTags = displayedPosts.map((tag: any) => tag.data.tag).flat();
 
 const processedTags = allTags.reduce((acc: { [key: string]: number }, tag) => {
     //check if tag exists

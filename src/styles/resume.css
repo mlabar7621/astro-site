@@ -1,0 +1,51 @@
+.date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    p {
+        margin: 0;
+        text-align: end;
+    }
+}
+h3 {
+    font-size: 20px;
+}
+h2 {
+    font-size: 28px;
+    margin-top: 1.5rem;
+    margin-bottom: -0.25rem;
+}
+h1 {
+    font-size: 46px;
+}
+p, li, ul {
+    font-size: 18px;
+}
+p, ul {
+    margin: 0 0 0.4rem 0;
+}
+li {
+    margin: 0 0 0.4rem 1rem;
+}
+ul {
+    list-style: disc;
+    padding: 0;
+}
+hr {
+    border-top: 1px solid rgb(var(--gray-dark));
+    margin: 0.25rem 0 0.25rem 0;
+}
+@media(max-width: 600px) {
+    h3 {
+        font-size: 18px;
+        margin: 0.1rem 0 0 0;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h1 {
+        font-size: 38px;
+    }
+    p, li, ul {
+        font-size: 15px;
+    }
+}

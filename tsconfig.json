@@ -9,8 +9,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@components/*": ["src/components/*"],
       "@i18n/*": ["src/i18n/*"],
-      "@consts": ["src/consts"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@content/*": ["src/content/*"]
     }
   }
 }

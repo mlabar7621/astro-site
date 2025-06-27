@@ -1,13 +1,10 @@
-import { languages, defaultLocale } from '@i18n/ui';
+import { languages } from '@i18n/ui';
 
 export function getAlternateLanguageLinks(currentLocale: string, currentPath: string) {
   const pathParts = currentPath.split('/').filter(Boolean);
 
-  //strip current locale from path if it's not the default (i.e., remove `/fr/`)
-  const relativePath =
-    currentLocale === defaultLocale
-      ? pathParts.join('/')
-      : pathParts.slice(1).join('/');
+  //strip current locale from path (i.e., remove `/fr/`)
+  const relativePath = pathParts.slice(1).join('/');
 
   return Object.entries(languages)
     .filter(([locale]) => locale !== currentLocale)

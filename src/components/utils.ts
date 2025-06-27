@@ -15,13 +15,12 @@ export function slugify(title: string) {
 }
 
 import type { CollectionEntry } from 'astro:content';
-import type { blogLocales } from '@i18n/locales';
+import type { BlogLocales } from '@i18n/locales';
 
-export function filterPosts(posts: CollectionEntry<blogLocales>[], {
+export function filterPosts(posts: CollectionEntry<BlogLocales>[], {
     filterDrafts = true,
     filterFuturePosts = true,
     orderByDate = true,
-    limit = undefined,
 } = {}) {
     const filteredPosts = posts.filter((post) => {
         const { pubDate, draft } = post.data;
@@ -31,13 +30,10 @@ export function filterPosts(posts: CollectionEntry<blogLocales>[], {
     });
 
     if(orderByDate) {
-        posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+        filteredPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
     } else {
-        posts.sort(() => Math.random() - 0.5)
+        filteredPosts.sort(() => Math.random() - 0.5)
     }
 
-    if(typeof limit === "number"){
-        return filteredPosts.slice(0, limit);
-    }
     return filteredPosts;
 }

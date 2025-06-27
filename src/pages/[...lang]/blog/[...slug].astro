@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BlogPost from '@layouts/BlogPost.astro';
+import { render } from 'astro:content';
+import { locales, blogLocales } from '@i18n/locales';
+import type { Locales, BlogLocales } from '@i18n/locales';
+
+export async function getStaticPaths() {
+	// Collect all promises first, must due to two dynamic elements
+	const allPaths = await Promise.all(
+		(locales as Locales[]).map(async (lang) => {
+		const blogLocale = blogLocales[lang] as BlogLocales;
+		const allPosts = await getCollection(blogLocale);
+		return allPosts.map((post) => {
+			return {
+				params: { slug: post.id, lang: lang },
+				props: { post }
+			}
+		})
+	})
+	)
+	// Flatten the array of arrays
+	return allPaths.flat();
+}
+
+
+const { post } = Astro.props as { post: any, locale: string };
+const { Content } = await render(post);
+---
+
+<BlogPost {...post.data}>
+	<Content />
+</BlogPost>

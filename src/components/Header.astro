@@ -5,28 +5,32 @@ import LanguagePickerDropdown from '@components/LanguagePickerDropdown.astro';
 import LanguagePickerSimple from '@components/LanguagePickerSimple.astro';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
-const currentLocale  = Astro.currentLocale || Astro.params.locale || 'en';
+const locale  = Astro.currentLocale || 'en';
 
-const ui = ui_text[currentLocale as keyof typeof ui_text];
-const homeURL = getRelativeLocaleUrl(currentLocale, '');
-const blogURL = getRelativeLocaleUrl(currentLocale, 'blog');
-const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
+const ui = ui_text[locale as keyof typeof ui_text];
+const homeURL = getRelativeLocaleUrl(locale, '');
+const resumeURL = getRelativeLocaleUrl(locale, 'resume');
+const blogURL = getRelativeLocaleUrl(locale, 'blog');
+const aboutURL = getRelativeLocaleUrl(locale, 'about');
+const contactURL = getRelativeLocaleUrl(locale, 'contact');
 ---
 
 <header>
-	<nav id="pc-nav">
+	<nav class="pc-nav">
 		<h2><a href={homeURL}>{ui.nav.title}</a></h2>
-		<div id="pc-links">
+		<div class="pc-links">
 			<HeaderLink href={homeURL}>{ui.nav.home}</HeaderLink>
+			<HeaderLink href={resumeURL}>{ui.nav.resume}</HeaderLink>
 			<HeaderLink href={blogURL}>{ui.nav.blog}</HeaderLink>
 			<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
+			<HeaderLink href={contactURL}>{ui.nav.contact}</HeaderLink>
 		</div>
 		<div id="pc-language-picker">
 			<LanguagePickerDropdown />
 		</div>
 	</nav>
-	<nav id="mobile-nav">
-		<div id="upper-bar">
+	<nav class="mobile-nav">
+		<div class="upper-bar">
 			<h2><a href={homeURL}>{ui.nav.title}</a></h2>
 			<div id="hamburger-icon">
 				<div id="bar1"></div>
@@ -34,12 +38,14 @@ const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
 				<div id="bar3"></div>
 			</div>
 		</div>
-		<div id="mobile-links">
+		<div class="mobile-links">
 			<HeaderLink href={homeURL}>{ui.nav.home}</HeaderLink>
+			<HeaderLink href={resumeURL}>{ui.nav.resume}</HeaderLink>
 			<HeaderLink href={blogURL}>{ui.nav.blog}</HeaderLink>
 			<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
+			<HeaderLink href={contactURL}>{ui.nav.contact}</HeaderLink>
 		</div>
-		<div id="mobile-language-picker">
+		<div class="mobile-language-picker">
 			<LanguagePickerSimple />
 		</div>
 	</nav>
@@ -62,27 +68,33 @@ const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
 		text-decoration: none;
 		color: var(--black);
 	}
-	#pc-nav, #upper-bar {
+	.pc-nav, .upper-bar {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
-	#pc-nav a {
+	.pc-nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		vertical-align: text-top;
 	}
-	#pc-nav a.active {
+	@media (max-width: 720px) {
+		.pc-links {
+			font-size: 17px;
+		}
+	}
+	.pc-nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.open #upper-bar {
+	.open .upper-bar {
 		border-bottom: 1px solid rgb(var(--gray-dark));
 	}
-	#mobile-nav.open {
+	.mobile-nav.open {
 		overflow-y: hidden;
-		#mobile-links { 
+		.mobile-links { 
 			display: block;
 			margin: 10px 0px;
 			a {
@@ -91,7 +103,7 @@ const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
 				margin: 8px 0px;
 			}
 		}
-		#mobile-language-picker {
+		.mobile-language-picker {
 			display: block;
 			padding: 5px 0px;
 			border-top: 1px solid rgb(var(--gray-dark));
@@ -104,22 +116,22 @@ const aboutURL = getRelativeLocaleUrl(currentLocale, 'about');
 			}
 		}
 	}
-	#mobile-links, #mobile-language-picker {
+	.mobile-links, .mobile-language-picker {
 		display: none;
 	}
-	#mobile-nav {
+	.mobile-nav {
 		font-size: 22px;
 		.active {
 			text-decoration: none;
 		}
 	}
 	@media (min-width: 601px) {
-		#mobile-nav {
+		.mobile-nav {
 			display: none;
 		}
 	}
 	@media (max-width: 600px) {
-		#pc-nav {
+		.pc-nav {
 			display: none;
 		}
 	}

@@ -1,0 +1,14 @@
+---
+---
+
+![Moi à la Mer de Glace à Chamonix](/src/assets/img/base/about_portrait.jpg)
+
+Je m’appelle Mikhail Labar et je suis un étudiant de l’ingénierie mécanique à l’Université de Maryland aux États-Unis. J’ai fait ce site web pour servir de CV, de portfolio, de blog, et de page de contact. 
+
+Actuellement, j’étudie à Munich en Allemagne en tant qu’étudiant d’échange, à l’Université « Hochschule München Université des Sciences Appliquées »
+
+Biélorusse et Russe sont mes langues maternelles, et je parle Anglais comme un natif. J’étudiais le Français depuis que j’aie 12 ans, et j’étudiais l’Allemande depuis 2023.
+
+Je fais du travail du bois et du métal, je peigne, et je pilote des drones freestyle, dont certains je poste ici.
+
+Je fais de la randonnée, du vélo, et de l’escalade. Je préfère à faire des défis de distance au lieu de vitesse, et j’en poste certains sure ce site.

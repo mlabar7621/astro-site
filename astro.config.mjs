@@ -10,6 +10,9 @@ export default defineConfig({
 	i18n: {
     	locales: ["en", "fr", "de", "ru", "be"],
     	defaultLocale: "en",
+		routing: {
+			prefixDefaultLocale: true
+		}
   	},
 	vite: {
     resolve: {
@@ -17,8 +20,8 @@ export default defineConfig({
         '@layouts': '/src/layouts',
         '@components': '/src/components',
 		'@i18n': '/src/i18n',
-		'@consts': '/src/consts',
 		'@styles': '/src/styles',
+      	"@content": '/src/content'
       }
     }
   }

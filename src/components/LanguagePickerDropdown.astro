@@ -1,7 +1,7 @@
 ---
 import { getAlternateLanguageLinks, getCurrentLanguageData } from '@i18n/utils';
 
-const currentLocale  = Astro.currentLocale || Astro.params.locale || 'en';
+const currentLocale  = Astro.currentLocale || 'en';
 const currentPath = Astro.url.pathname;
 
 const links = getAlternateLanguageLinks(currentLocale, currentPath);
@@ -64,6 +64,7 @@ const currentLinks = getCurrentLanguageData(currentLocale);
     transition: all 0.2s ease-in-out;
     box-shadow: 0 2px 8px rgba(var(--black),2%);
     pointer-events: none;
+    z-index: 999;
     div {
       display: inline-flex;
       white-space: nowrap;

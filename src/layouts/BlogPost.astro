@@ -6,7 +6,7 @@ import Footer from '@components/Footer.astro';
 import FormattedDate from '@components/FormattedDate.astro';
 import StarRating from '@components/StarRating.astro';
 
-const currentLocale = Astro.currentLocale || Astro.params.locale;
+const currentLocale = Astro.currentLocale;
 
 //as long as headmatter is identical for all languages, 'Props' can be typed by any blog collection
 type Props = CollectionEntry<'blog-en'>['data'];
@@ -16,7 +16,7 @@ const { title, description, pubDate, updatedDate, heroImage, rating} = Astro.pro
 
 <html lang=`${currentLocale}`>
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead />
 		<style>
 			main {
 				width: calc(100% - 2em);

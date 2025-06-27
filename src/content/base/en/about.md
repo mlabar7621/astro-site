@@ -1,0 +1,14 @@
+---
+---
+
+![Me at the Mer de Glace in Chamonix](/src/assets/img/base/about_portrait.jpg)
+
+My name is Mikhail Labar, and I am currently a student of Mechanical Engineering at the University of Maryland, College Park. I made this website to serve as my digital resume, portfolio, contact page, and blog.
+
+I am currently studying abroad in Munich, Germany, at Hochschule München University of Applied Sciences. 
+
+Russian and Belarusian are my native languages, and I speak English at a native level. I learned French in high school, and German in College, and speak both fluently.
+
+In my free time, I like to do woodworking and metalworking, some of which I post here. I also do amateur freestyle drone flying, for which I built my own drone. I paint and draw sometimes, but quite rarely.
+
+In regards to sports, I like to hike, bike, and rock climb. I prefer challenging myself with duration rather than difficulty, doing 10-hour rides at 12 mph instead of 20-minute ones at 20 mph. I post reviews of some routes I’ve done on this site.
