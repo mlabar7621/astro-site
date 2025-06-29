@@ -1,8 +1,7 @@
 ---
 title: 'Regensbourg'
-description: 'Lorem ipsum dolor sit amet'
 pubDate: 2024-07-23
-heroImage: '/src/assets/img/posts/blog-placeholder-3.jpg'
+heroImage: '/img/posts/blog-placeholder-3.jpg'
 tag: 'Voyage'
 draft: false
 rating: 4

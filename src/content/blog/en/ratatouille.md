@@ -1,8 +1,7 @@
 ---
 title: 'Recipe for Ratatouille'
-description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 16 2026'
-heroImage: '/src/assets/img/posts/blog-placeholder-4.jpg'
+heroImage: '/img/posts/blog-placeholder-4.jpg'
 tag: 'Cooking'
 draft: false
 rating: 4

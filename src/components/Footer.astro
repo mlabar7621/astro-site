@@ -1,9 +1,13 @@
 ---
+import { ui_text } from "@i18n/ui";
+
 const today = new Date();
+const locale = Astro.currentLocale;
+const ui = ui_text[locale as keyof typeof ui_text];
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Mikhail Labar. All content licensed under the <a id="footer-license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0 license<a/>.
+	&copy; {today.getFullYear()} Mikhail Labar. {ui.nav.license} <a id="footer-license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY-4.0<a/>.
 	
 	<div class="social-links">
 		<a href="https://mastodon.social/@mlabar" target="_blank">

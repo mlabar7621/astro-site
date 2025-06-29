@@ -1,8 +1,7 @@
 ---
 title: 'Regensburg'
-description: 'Lorem ipsum dolor sit amet'
 pubDate: 2024-06-23
-heroImage: '/src/assets/img/posts/IMG_4280.jpg'
+heroImage: '/img/posts/IMG_4280.jpg'
 tag: 'Travel'
 draft: false
 rating: 5

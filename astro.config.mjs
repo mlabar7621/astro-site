@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://mlabar7621.github.io',
-	base: 'astro-site',
+	base: '/astro-site',
 	integrations: [mdx(), sitemap()],
 	i18n: {
     	locales: ["en", "fr", "de", "ru", "be"],

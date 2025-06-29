@@ -37,3 +37,14 @@ export function filterPosts(posts: CollectionEntry<BlogLocales>[], {
 
     return filteredPosts;
 }
+
+
+//this is beign directly taken from chatgpt
+export function preparePosts(rawPosts: any[]) {
+  return rawPosts.map((p) => ({
+    title: p.data.title,
+    slug: p.slug,
+    date: p.data.date,
+    rating: p.data.rating ?? 0,
+  }));
+}

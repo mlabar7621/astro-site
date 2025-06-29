@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+import { filterPosts } from '@components/utils.ts';
+import type { BlogLocales } from '@i18n/locales';
+import { ui_text } from '@i18n/ui';
+
+const locale = Astro.currentLocale;
+const blogLocale = `blog-${locale}`;
+const ui = ui_text[locale as keyof typeof ui_text];
+
+const allPosts = (await getCollection(blogLocale as BlogLocales));
+const displayedPosts = filterPosts(allPosts);
+const allTags = displayedPosts.map((tag: any) => tag.data.tag).flat();
+const processedTags = allTags.reduce((acc: { [key: string]: number }, tag) => {
+    //check if tag exists
+    const value = acc[tag] || 0;
+    return {
+        ...acc,
+        [tag]: value + 1
+    }
+}, {})
+
+const { showCount } = Astro.props;
+---
+
+<span class="all-selectors">
+    <div>
+        <input type="search" id="search" placeholder=`${ui.blog.search}` />
+    </div>
+    <div>
+        <span class="selector-wrapper">
+            <p class="dropdown-title">{ui.blog.sort}:</p>
+            <div class="dropdown selector" data-name="dropdown1" tabindex="0">
+                <div class="dropdown-button"><p>Date</p></div>
+                <ul class="dropdown-content">
+                    <li data-value="date">{ui.blog.date}</li>
+                    <li data-value="rating">{ui.blog.rating}</li>
+                </ul>
+                <input type="hidden" class="dropdown-hidden" id="sort" value="date"/>
+            </div>
+        </span>
+    </div>
+    <div>
+        <span class="selector-wrapper">
+            <p class="dropdown-title">{ui.blog.tag_filter}:</p>
+            <div class="dropdown selector" data-name="dropdown2" tabindex="0">
+                <div class="dropdown-button"><p>{ui.blog.tag_select}</p></div>
+                <ul class="dropdown-content">
+                    <li data-value="no-tag">{ui.blog.tag_select}</li>
+                    {
+                        Object.entries(processedTags).map(([key, val]) => (
+                            <li data-value={key}>{key}{showCount ? ` (${val})` : ''}</li>
+                        ))
+                    }
+                </ul>
+                <input type="hidden" class="dropdown-hidden" id="tag" value="no-tag"/>
+            </div>
+        </span>
+    </div>
+</span>
+<style>
+    .dropdown-title {
+        display: inline-block;
+    }
+    .all-selectors {
+        display: flex;
+        justify-content: space-between;
+    }
+    .all-selectors div {
+        display: inline-block;
+        vertical-align: top;
+    }
+    .dropdown {
+        display: inline-block;
+    }
+    .dropdown-content{
+        opacity: 0;
+        display: block;
+        position: absolute;
+        z-index: 100;
+        background: rgb(var(--gray-x-light));
+        gap: 0;
+        margin-top: -1rem;
+        transition: all 0.2s ease-in-out;
+        transform: translateY(-8px);
+        li {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 0.1rem;
+        }
+    }
+    .open .dropdown-content, .dropdown:hover .dropdown-content{
+        opacity: 100;
+        transform: translateY(0px);
+    }
+    p{
+        margin-top:0;
+    }
+</style>
+
+<script>
+    import { dropdownScript } from '@components/dropdown.ts';
+    dropdownScript();
+</script>

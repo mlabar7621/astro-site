@@ -5,44 +5,45 @@ import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 
 export async function getStaticPaths() {
-	return (locales as Locales[]).map((lang) => {
-		return {
-			params: {lang},
-			props: {locale: lang}
-		}
-	})
+    return (locales as Locales[]).map((lang) => ({
+        params: {lang},
+        props: {locale: lang}
+    }));
 }
 
 const { locale } = Astro.props;
 
-//load article info. aliases do not work here.
-const loaders = import.meta.glob('/src/content/base/*/about.md');
-const loader = loaders[`/src/content/base/${locale}/about.md`];
+// load article info, aliases do not work here
+const loaders = import.meta.glob('/src/content/base/*/about.mdx');
+const loader = loaders[`/src/content/base/${locale}/about.mdx`];
 const Article = await loader() as any;
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 ---
 
 <style>
-	:global(article img) {
-		width: 50%;
-		float: left;
-		margin-right: 1rem;
-		margin-bottom: 1rem;
-		border-radius: 5%;
-	}
-	article {
-		text-align: justify;
-		text-justify: inter-word;
-	}
+    :global(article img) {
+        width: 50%;
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5%;
+    }
+    article {
+        text-align: justify;
+        text-justify: inter-word;
+    }
 </style>
 
-<html lang=`${locale}`>
-	<head>
-		<BaseHead />
+<html lang={locale}>
+    <head>
+        <BaseHead />
     </head>
     <body>
         <Header />
         <main>
             <article>
+				<img src=`${BASE_URL}/img/base/about_portrait.jpg`/>
                 <Article.Content />
             </article>
         </main>

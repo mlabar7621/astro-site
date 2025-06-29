@@ -1,18 +1,20 @@
 ---
-import BaseHead from '@components/BaseHead.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
-import TagCloud from '@components/TagCloud.astro';
-import StarRating from '@components/StarRating.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from '@components/FormattedDate.astro';
 import { filterPosts } from '@components/utils';
-import '@styles/blog_index.css'
 import type { PaginateFunction } from 'astro';
 import { locales, blogLocales } from '@i18n/locales';
 import type { Locales, BlogLocales } from '@i18n/locales';
 import Paginator from '@components/Paginator.astro';
 
+// custom elements and styles
+import PostCard from '@components/PostCard.astro';
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import PostSelector from '@components/PostSelector.astro';
+import '@styles/blog_index.css'
+
+//gernerates page paths
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   // Map over locales and collect promises
   const allPaths = await Promise.all(
@@ -42,24 +44,12 @@ const { page, lang } = Astro.props as { page: any, lang: string};
 	<body>
 		<Header />
 		<main>
-			<TagCloud showCount="true"/>
+			<PostSelector showCount={true}/>
 			<section>
-				<ul>
+				<ul id="post-list">
 					{
 						page.data.map((post: any) => (
-							<li>
-								<a href={`/${lang}/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<StarRating rating={post.data.rating} index={true}/>
-									<div class="title-container">
-										<h4 class="title">{post.data.title}</h4>
-										<p class="tag">{post.data.tag}</p>
-									</div>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
+							<PostCard post={post} lang={lang} />
 						))
 					}
 				</ul>
@@ -69,3 +59,8 @@ const { page, lang } = Astro.props as { page: any, lang: string};
 		<Footer />
 	</body>
 </html>
+
+<script>
+    import { postFilter } from '@components/postFilter.ts';
+    postFilter();
+</script>

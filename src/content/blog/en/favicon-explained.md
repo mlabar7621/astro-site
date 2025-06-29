@@ -1,8 +1,7 @@
 ---
 title: 'Explaining the Favicon'
-description: 'Lorem ipsum dolor sit amet'
 pubDate: 2025-06-27
-heroImage: '/src/assets/img/posts/blog-placeholder-2.jpg'
+heroImage: '/img/posts/blog-placeholder-2.jpg'
 tag: 'Website'
 draft: false
 rating: 0
