@@ -22,5 +22,6 @@ This theme is as modular when it comes to langauges as possible. whenever you ad
 - src\i18n\locales.ts
 - src\i18n\ui.ts
 - add image to src\assets\img\icons
+- add names to public\map\metadata.json (only places that have been visited)
 
 I have no idea if the code works for languages written right to left or top to bottom.
