@@ -9,11 +9,11 @@ const currentLinks = getCurrentLanguageData(currentLocale);
 ---
 
 <div class="dropdown">
-  <div class="dropdown-button">
+  <div class="button">
     <img src={currentLinks.img} />
     {currentLinks.name}
   </div>
-  <div class="dropdown-content">
+  <div class="content">
   {
     links.map(({ locale, name, img, url }) => (
       <div>
@@ -34,24 +34,24 @@ const currentLinks = getCurrentLanguageData(currentLocale);
     position: relative;
   }
   @media (hover:hover) and (pointer:fine) {
-    .dropdown:hover .dropdown-content{
+    .dropdown:hover .content{
       display: block;
       transform: translateY(0);
       opacity: 100%;
       pointer-events: auto;
     }
   }
-  .dropdown.open .dropdown-content{
+  .dropdown.open .content{
     display: block;
     transform: translateY(0);
     opacity: 100%;
     pointer-events: auto;
   }
-  .dropdown-button {
+  .button {
     display: block;
     padding: 8px;
   }
-  .dropdown-content {
+  .content {
     position: absolute;
     opacity: 0%;
     background-color: white;
@@ -88,5 +88,5 @@ const currentLinks = getCurrentLanguageData(currentLocale);
 
 <script>
   import { dropdownScript } from './dropdown';
-  dropdownScript();
+  dropdownScript('.dropdown', '.button', '.content');
 </script>

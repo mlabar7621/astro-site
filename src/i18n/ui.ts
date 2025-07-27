@@ -21,6 +21,7 @@ export const ui_text = {
         blog: "Blog",
         about: "About",
         contact: "Contact",
+        portfolio: "Portfolio",
         license: "All content licensed under",
     },
     blog:{
@@ -42,6 +43,7 @@ export const ui_text = {
         blog: "Blog",
         about: "Über Mich",
         contact: "Kontakt",
+        portfolio: "Portfolio",
         license: "All content licensed under",
     },
     blog:{
@@ -63,6 +65,7 @@ export const ui_text = {
         blog: "Blog",
         about: "de Moi",
         contact: "Contacte",
+        portfolio: "Portfolio",
         license: "All content licensed under",
     },
     blog:{
@@ -84,6 +87,7 @@ export const ui_text = {
         blog: "Blog",
         about: "About",
         contact: "Contact",
+        portfolio: "Portfolio",
         license: "All content licensed under",
     },
     blog:{
@@ -105,6 +109,7 @@ export const ui_text = {
         blog: "Blog",
         about: "About",
         contact: "Contact",
+        portfolio: "Portfolio",
         license: "All content licensed under",
     },
     blog:{

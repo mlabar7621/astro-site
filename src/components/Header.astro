@@ -13,17 +13,35 @@ const resumeURL = getRelativeLocaleUrl(locale, 'resume');
 const blogURL = getRelativeLocaleUrl(locale, 'blog');
 const aboutURL = getRelativeLocaleUrl(locale, 'about');
 const contactURL = getRelativeLocaleUrl(locale, 'contact');
+const portfolioURL = getRelativeLocaleUrl(locale, 'portfolio');
 ---
 
 <header>
 	<nav class="pc-nav">
 		<h2><a href={homeURL}>{ui.nav.title}</a></h2>
 		<div class="pc-links">
-			<HeaderLink href={homeURL}>{ui.nav.home}</HeaderLink>
-			<HeaderLink href={resumeURL}>{ui.nav.resume}</HeaderLink>
-			<HeaderLink href={blogURL}>{ui.nav.blog}</HeaderLink>
-			<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
-			<HeaderLink href={contactURL}>{ui.nav.contact}</HeaderLink>
+			<div class="header-item">
+				<HeaderLink href={homeURL}>{ui.nav.home}</HeaderLink>
+			</div>
+			<div class="header-folder">
+				<div class="folder-title">
+					<HeaderLink href={resumeURL}>{ui.nav.resume}</HeaderLink>
+				</div>
+				<div class="folder-content">
+					<HeaderLink href={portfolioURL}>{ui.nav.portfolio}</HeaderLink>
+				</div>
+			</div>
+			<div class="header-folder">
+				<div class="folder-title">
+					<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
+				</div>
+				<div class="folder-content">
+					<HeaderLink href={contactURL}>{ui.nav.contact}</HeaderLink>
+				</div>
+			</div>
+			<div class="header-item">
+				<HeaderLink href={blogURL}>{ui.nav.blog}</HeaderLink>
+			</div>
 		</div>
 		<div id="pc-language-picker">
 			<LanguagePickerDropdown />
@@ -44,6 +62,7 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 			<HeaderLink href={blogURL}>{ui.nav.blog}</HeaderLink>
 			<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
 			<HeaderLink href={contactURL}>{ui.nav.contact}</HeaderLink>
+			<HeaderLink href={portfolioURL}>{ui.nav.portfolio}</HeaderLink>
 		</div>
 		<div class="mobile-language-picker">
 			<LanguagePickerSimple />
@@ -52,9 +71,10 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 </header>
 
 <style>
+
+	/* pc menu css */
 	header {
 		margin: 0;
-		padding: 0 1em;
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
@@ -62,11 +82,13 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 		margin: 0;
 		font-size: 1em;
 	}
-
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
 		color: var(--black);
+	}
+	.pc-nav {
+		padding: 0 1em;
 	}
 	.pc-nav, .upper-bar {
 		display: flex;
@@ -80,20 +102,29 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 		text-decoration: none;
 		vertical-align: text-top;
 	}
-	@media (max-width: 720px) {
-		.pc-links {
-			font-size: 17px;
-		}
+	.pc-links{
+		display: flex;
 	}
 	.pc-nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.open .upper-bar {
-		border-bottom: 1px solid rgb(var(--gray-dark));
+	@media (max-width: 720px) {
+		.pc-links {
+			font-size: 17px;
+		}
 	}
+
+	/* mobile menu css */
 	.mobile-nav.open {
-		overflow-y: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: white;
+		overflow-y: auto;
+		box-sizing: border-box;
 		.mobile-links { 
 			display: block;
 			margin: 10px 0px;
@@ -121,11 +152,20 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 	}
 	.mobile-nav {
 		font-size: 22px;
+		padding: 0 1em;
 		.active {
 			text-decoration: none;
 		}
 	}
-	@media (min-width: 601px) {
+	.open .upper-bar {
+		border-bottom: 1px solid rgb(var(--gray-dark));
+	}
+	body.no-scroll {
+		overflow: hidden;
+	}
+
+	/* mobile menu logic */
+	@media (min-width: 601px)  {
 		.mobile-nav {
 			display: none;
 		}
@@ -135,6 +175,8 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 			display: none;
 		}
 	}
+
+	/* mobile menu icon */
 	#hamburger-icon {
 		margin: 12px 0;
 		div {
@@ -160,7 +202,7 @@ const contactURL = getRelativeLocaleUrl(locale, 'contact');
 
 <script>
   import { dropdownScript } from './dropdown';
-  dropdownScript();
+  dropdownScript('.header-folder', '.folder-title', '.folder-content');
   import { mobileMenu } from './mobileMenu';
   mobileMenu();
 </script>

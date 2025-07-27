@@ -10,6 +10,7 @@ export function mobileMenu() {
         navLink?.classList.toggle('open');
       }
       hamburger?.classList.toggle('open');
+      document.body.classList.toggle('no-scroll');
     });
   });
 }

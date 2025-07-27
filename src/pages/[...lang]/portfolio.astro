@@ -1,0 +1,65 @@
+---
+import { locales, type Locales } from '@i18n/locales';
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+export async function getStaticPaths() {
+    return (locales as Locales[]).map((lang) => ({
+        params: {lang},
+        props: {locale: lang}
+    }));
+}
+
+const { locale } = Astro.props;
+
+// load article info, aliases do not work here
+const loaders = import.meta.glob('/src/content/base/*/portfolio.mdx');
+const loader = loaders[`/src/content/base/${locale}/portfolio.mdx`];
+const Article = await loader() as any;
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
+---
+
+<style>
+    @media (min-width: 721px) {
+        article {
+            column-count: 3;
+        }
+    }
+    @media (max-width: 720px) {
+        article {
+            column-count: 2;
+        }
+    }
+    @media (max-width: 600px) {
+        article { 
+            column-count: 1;
+        }
+    }
+    article {
+        column-gap: 10px;
+        p {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+        }
+    }
+</style>
+
+
+<html lang={locale}>
+    <head>
+        <BaseHead />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <article>
+                <Article.Content />
+            </article>
+        </main>
+        <Footer />
+    </body>
+</html>

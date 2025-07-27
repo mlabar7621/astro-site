@@ -3,7 +3,6 @@ import { locales, type Locales } from '@i18n/locales';
 import BaseHead from '@components/BaseHead.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
-import LeafletMap from '@components/LeafletMap.astro';
 
 export async function getStaticPaths() {
 	return (locales as Locales[]).map((lang) => {
@@ -25,7 +24,7 @@ const Article = await loader() as any;
 <style>
 </style>
 
-<html lang=`${locale}`>
+<html lang={locale}>
 	<head>
 		<BaseHead />
     </head>
@@ -34,7 +33,6 @@ const Article = await loader() as any;
         <main>
             <article>
                 <Article.Content />
-                <LeafletMap />
             </article>
         </main>
         <Footer />
