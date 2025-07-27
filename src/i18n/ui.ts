@@ -15,13 +15,14 @@ export const ui_text = {
     nav:{
         site_title: "Mikhail Labar",
         site_description: "Mikhail Labar's personal website and blog",
-        title: "Personal Site",
+        title: "ML",
         home: "Home",
         resume: "Resume",
         blog: "Blog",
         about: "About",
         contact: "Contact",
         portfolio: "Portfolio",
+        certifications: "Certifications",
         license: "All content licensed under",
     },
     blog:{
@@ -35,7 +36,7 @@ export const ui_text = {
   },
   de: {
     nav:{
-        site_title: "Mikhail Labar",
+        site_title: "ML",
         site_description: "Mikhail Labar's personal website and blog",
         title: "Personelle Seite",
         home: "Heim",
@@ -44,6 +45,7 @@ export const ui_text = {
         about: "Über Mich",
         contact: "Kontakt",
         portfolio: "Portfolio",
+        certifications: "Certifications",
         license: "All content licensed under",
     },
     blog:{
@@ -57,7 +59,7 @@ export const ui_text = {
   },
   fr: {
     nav:{
-        site_title: "Mikhail Labar",
+        site_title: "ML",
         site_description: "Mikhail Labar's personal website and blog",
         title: "Site Personel",
         home: "Acceuil",
@@ -66,6 +68,7 @@ export const ui_text = {
         about: "de Moi",
         contact: "Contacte",
         portfolio: "Portfolio",
+        certifications: "Certifications",
         license: "All content licensed under",
     },
     blog:{
@@ -79,7 +82,7 @@ export const ui_text = {
   },
   ru: {
     nav:{
-        site_title: "Mikhail Labar",
+        site_title: "ML",
         site_description: "Mikhail Labar's personal website and blog",
         title: "Personal Site",
         home: "Home",
@@ -88,6 +91,7 @@ export const ui_text = {
         about: "About",
         contact: "Contact",
         portfolio: "Portfolio",
+        certifications: "Certifications",
         license: "All content licensed under",
     },
     blog:{
@@ -101,7 +105,7 @@ export const ui_text = {
   },
   be: {
     nav:{
-        site_title: "Mikhail Labar",
+        site_title: "ML",
         site_description: "Mikhail Labar's personal website and blog",
         title: "Personal Site",
         home: "Home",
@@ -110,6 +114,7 @@ export const ui_text = {
         about: "About",
         contact: "Contact",
         portfolio: "Portfolio",
+        certifications: "Certifications",
         license: "All content licensed under",
     },
     blog:{

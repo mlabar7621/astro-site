@@ -1,0 +1,15 @@
+.article-content h1 {
+    font-family: 'Old-Standard';
+}
+.row-block {
+    display: flex;
+    gap: 2rem;
+}
+.row-block p {
+    flex: 1;
+    margin: 0;
+}
+.row-block h3 {
+    flex: 1;
+    font-family: 'Old-Standard';
+}

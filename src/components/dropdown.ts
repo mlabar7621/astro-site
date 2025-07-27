@@ -7,11 +7,21 @@ export function dropdownScript(dropdown_class: string, button_class: string, con
 
     if (!trigger || !content) return;
 
-    // Don't close immediately on open
+    // open and don't close immediately on open
     trigger.addEventListener('click', (e) => {
       e.stopPropagation(); 
       closeAllDropdownsExcept(dropdown);
-      dropdown.classList.toggle('open');
+
+      const pe = e as PointerEvent;
+
+      if (pe.pointerType !== 'mouse') {
+        if (!dropdown.classList.contains('open')) {
+          e.preventDefault();
+          dropdown.classList.toggle('open');
+        }
+      } else {
+        dropdown.classList.toggle('open');
+      }
     });
 
     // Clicking inside should not close it
@@ -39,13 +49,13 @@ export function dropdownScript(dropdown_class: string, button_class: string, con
   }
 }
 
-export function selectorDropdownScript(selector_class: string) {
+export function selectorDropdownScript(selector_class: string, display_text_class: string, content_list_class: string, hidden_selector_class: string) {
   const selectorDropdowns = document.querySelectorAll(selector_class);
 
   selectorDropdowns.forEach(dropdown => {
-    const triggerText = dropdown.querySelector('.dropdown-button p')!;
-    const content = dropdown.querySelectorAll('.dropdown-content li');
-    const hiddenInput = dropdown.querySelector('.dropdown-hidden') as HTMLInputElement;
+    const triggerText = dropdown.querySelector(display_text_class) as HTMLInputElement;
+    const content = dropdown.querySelectorAll(content_list_class);
+    const hiddenInput = dropdown.querySelector(hidden_selector_class) as HTMLInputElement;
 
     content.forEach(option => {
       option.addEventListener('click', (e) => {
@@ -56,5 +66,17 @@ export function selectorDropdownScript(selector_class: string) {
         dropdown.classList.remove('open');
       });
     });
+  });
+
+  // Close all dropdowns on outside click
+  document.addEventListener('click', () => {
+    selectorDropdowns.forEach(d => d.classList.remove('open'));
+  });
+
+  // Close on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      selectorDropdowns.forEach(d => d.classList.remove('open'));
+    }
   });
 }

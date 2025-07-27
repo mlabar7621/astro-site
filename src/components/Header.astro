@@ -14,11 +14,16 @@ const blogURL = getRelativeLocaleUrl(locale, 'blog');
 const aboutURL = getRelativeLocaleUrl(locale, 'about');
 const contactURL = getRelativeLocaleUrl(locale, 'contact');
 const portfolioURL = getRelativeLocaleUrl(locale, 'portfolio');
+const certificationsURL = getRelativeLocaleUrl(locale, 'certifications');
 ---
 
 <header>
 	<nav class="pc-nav">
-		<h2><a href={homeURL}>{ui.nav.title}</a></h2>
+		<div>
+			<h2>
+				<a href={homeURL}>{ui.nav.title}</a>
+			</h2>
+		</div>
 		<div class="pc-links">
 			<div class="header-item">
 				<HeaderLink href={homeURL}>{ui.nav.home}</HeaderLink>
@@ -26,14 +31,17 @@ const portfolioURL = getRelativeLocaleUrl(locale, 'portfolio');
 			<div class="header-folder">
 				<div class="folder-title">
 					<HeaderLink href={resumeURL}>{ui.nav.resume}</HeaderLink>
+					<img class="dropdown-arrow" src="/astro-site/img/icons/angle-down-solid-full.svg">
 				</div>
 				<div class="folder-content">
 					<HeaderLink href={portfolioURL}>{ui.nav.portfolio}</HeaderLink>
+					<HeaderLink href={certificationsURL}>{ui.nav.certifications}</HeaderLink>
 				</div>
 			</div>
 			<div class="header-folder">
 				<div class="folder-title">
 					<HeaderLink href={aboutURL}>{ui.nav.about}</HeaderLink>
+					<img class="dropdown-arrow" src="/astro-site/img/icons/angle-down-solid-full.svg">
 				</div>
 				<div class="folder-content">
 					<HeaderLink href={contactURL}>{ui.nav.contact}</HeaderLink>
@@ -86,6 +94,7 @@ const portfolioURL = getRelativeLocaleUrl(locale, 'portfolio');
 	h2 a.active {
 		text-decoration: none;
 		color: var(--black);
+		font-family: 'Pinyon';
 	}
 	.pc-nav {
 		padding: 0 1em;
@@ -100,14 +109,42 @@ const portfolioURL = getRelativeLocaleUrl(locale, 'portfolio');
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
-		vertical-align: text-top;
+	}
+	.folder-title a {
+		padding-right: 0;
 	}
 	.pc-links{
 		display: flex;
+		gap: 10px;
 	}
-	.pc-nav a.active {
+	.header-item .active, .folder-title .active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
+	}
+	.folder-content {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		background: white;
+		padding: 0 0 10px;
+		border-radius: 0 0 4px 4px;
+		left: -0.5rem;
+	}
+	.folder-content a {
+		padding: 0 1rem;
+		position: relative;
+	}
+	.header-folder {
+		position: relative;
+	}
+	.header-folder:hover .folder-content, .header-folder.open .folder-content{
+		opacity: 1;
+		visibility: visible;
+	}
+	.dropdown-arrow {
+		height: 1rem;
+		bottom: -2px;
+		position: relative;
 	}
 	@media (max-width: 720px) {
 		.pc-links {

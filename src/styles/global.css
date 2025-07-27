@@ -31,6 +31,20 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: 'Pinyon';
+	src: url('/astro-site/fonts/PinyonScript-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Old-Standard';
+	src: url('/astro-site/fonts/OldStandardTT-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
 body {
 	font-family: 'Atkinson', sans-serif;
 	margin: 0;

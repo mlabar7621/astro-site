@@ -29,23 +29,29 @@ const { showCount } = Astro.props;
     </div>
     <div>
         <span class="selector-wrapper">
-            <p class="dropdown-title">{ui.blog.sort}:</p>
-            <div class="dropdown selector" data-name="dropdown1" tabindex="0">
-                <div class="dropdown-button"><p>Date</p></div>
-                <ul class="dropdown-content">
+            <p class="selector-title">{ui.blog.sort}:</p>
+            <div class="selector" data-name="sorting-selector" tabindex="0">
+                <div class="selector-button">
+                    <p>Date</p>
+                    <img class="dropdown-arrow" src="/astro-site/img/icons/angle-down-solid-full.svg">
+                </div>
+                <ul class="selector-content">
                     <li data-value="date">{ui.blog.date}</li>
                     <li data-value="rating">{ui.blog.rating}</li>
                 </ul>
-                <input type="hidden" class="dropdown-hidden" id="sort" value="date"/>
+                <input type="hidden" class="selector-hidden" id="sort" value="date"/>
             </div>
         </span>
     </div>
     <div>
         <span class="selector-wrapper">
-            <p class="dropdown-title">{ui.blog.tag_filter}:</p>
-            <div class="dropdown selector" data-name="dropdown2" tabindex="0">
-                <div class="dropdown-button"><p>{ui.blog.tag_select}</p></div>
-                <ul class="dropdown-content">
+            <p class="selector-title">{ui.blog.tag_filter}:</p>
+            <div class="selector" data-name="category-selector" tabindex="0">
+                <div class="selector-button">
+                    <p>{ui.blog.tag_select}</p>
+                    <img class="dropdown-arrow" src="/astro-site/img/icons/angle-down-solid-full.svg">
+                </div>
+                <ul class="selector-content">
                     <li data-value="no-tag">{ui.blog.tag_select}</li>
                     {
                         Object.entries(processedTags).map(([key, val]) => (
@@ -53,29 +59,32 @@ const { showCount } = Astro.props;
                         ))
                     }
                 </ul>
-                <input type="hidden" class="dropdown-hidden" id="tag" value="no-tag"/>
+                <input type="hidden" class="selector-hidden" id="tag" value="no-tag"/>
             </div>
         </span>
     </div>
 </span>
 <style>
-    .dropdown-title {
+    .selector-title {
         display: inline-block;
+    }
+    .selector-button {
+        display: inline-flex;
     }
     .all-selectors {
         display: flex;
         justify-content: space-between;
     }
     .all-selectors div {
-        display: inline-block;
         vertical-align: top;
     }
-    .dropdown {
+    .selector {
         display: inline-block;
+        position: relative;
     }
-    .dropdown-content{
+    .selector-content{
         opacity: 0;
-        display: block;
+        visibility: hidden;
         position: absolute;
         z-index: 100;
         background: rgb(var(--gray-x-light));
@@ -83,22 +92,34 @@ const { showCount } = Astro.props;
         margin-top: -1rem;
         transition: all 0.2s ease-in-out;
         transform: translateY(-8px);
+		padding: 0 10px 10px;
+		border-radius: 0 0 4px 4px;
+        left: -10px;
         li {
-            width: 100%;
+            width: max-content;
             text-align: left;
             margin-bottom: 0.1rem;
         }
     }
-    .open .dropdown-content, .dropdown:hover .dropdown-content{
+    .dropdown-arrow {
+		height: 1rem;
+		bottom: -8px;
+		position: relative;
+	}
+    .open .selector-content, .selector:hover .selector-content{
         opacity: 100;
+        visibility: visible;
         transform: translateY(0px);
     }
     p{
         margin-top:0;
     }
+    input {
+        height: 2rem;
+    }
 </style>
 
 <script>
-    import { dropdownScript } from '@components/dropdown.ts';
-    dropdownScript();
+    import { selectorDropdownScript } from '@components/dropdown.ts';
+    selectorDropdownScript('.selector', '.selector-button p', '.selector-content li', '.selector-hidden');
 </script>
