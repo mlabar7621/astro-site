@@ -81,10 +81,11 @@ ul a:hover img {
     }
     ul li {
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
     ul li:first-child {
         margin-bottom: 0;
+        text-align: left;
     }
     ul li:first-child .title {
         font-size: 1.563em;

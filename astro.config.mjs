@@ -2,12 +2,13 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://mlabar7621.github.io',
 	base: '/astro-site',
-	integrations: [mdx(), sitemap()],
+	integrations: [mdx(), sitemap(), react()],
 	i18n: {
     	locales: ["en", "fr", "de", "ru", "be"],
     	defaultLocale: "en",

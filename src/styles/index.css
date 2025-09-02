@@ -1,15 +1,31 @@
-.article-content h1 {
-    font-family: 'Old-Standard';
-}
 .row-block {
     display: flex;
     gap: 2rem;
+    height: 35rem;
 }
-.row-block p {
+.row-block div {
     flex: 1;
-    margin: 0;
+    align-content: center;
 }
-.row-block h3 {
-    flex: 1;
-    font-family: 'Old-Standard';
+.body-link {
+    text-decoration: none;
+    color: rgb(var(--gray-dark));
+    border: 2px solid rgb(var(--gray-dark));
+    border-radius: 10px;
+    padding: 0px 4px;
+}
+.body-link:hover {
+    color: rgb(var(--gray-x-light));
+    background: rgb(var(--gray-dark));
+}
+.body-link p {
+    display: inline;
+}
+.right-arrow{
+    height: 1rem;
+    bottom: -2px;
+    position: relative;
+}
+.hero-image {
+    width: 100%;
 }
