@@ -1,19 +1,48 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { ui_text } from '@i18n/ui';
+import { blogLocales, locales } from '@i18n/locales';
 
-const site_title = ui_text.en.nav.site_title;
-const site_description = ui_text.en.nav.site_description;
+export async function get({ request }) {
+  let items = [];
 
-export async function GET(context) {
-	const posts = await getCollection('blog');
-	return rss({
-		title: site_title,
-		description: site_description,
-		site: context.site,
-		items: posts.map((post) => ({
-			...post.data,
-			link: `/blog/${post.id}/`,
-		})),
-	});
+  for (const lang of locales) {
+    const blogLocale = blogLocales[lang];
+    const posts = await getCollection(blogLocale);
+
+    for (const post of posts) {
+      items.push({
+        title: post.data.title,
+        link: `/blog/${lang}/${post.slug}/`,
+        pubDate: post.data.date,
+        description: post.data.description,
+        language: lang,
+      });
+    }
+  }
+
+  // Generate RSS XML from items
+  const rss = `
+    <rss version="2.0">
+      <channel>
+        <title>Your Blog Title</title>
+        <link>https://yourdomain.com/</link>
+        <description>Your blog description</description>
+        ${items.map(item => `
+          <item>
+            <title>${item.title}</title>
+            <link>${item.link}</link>
+            <pubDate>${item.pubDate}</pubDate>
+            <description>${item.description}</description>
+            <language>${item.language}</language>
+          </item>
+        `).join('')}
+      </channel>
+    </rss>
+  `;
+
+  return new Response(rss, {
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+  });
 }
