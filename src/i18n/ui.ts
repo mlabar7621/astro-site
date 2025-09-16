@@ -1,11 +1,9 @@
-const BASE_URL = import.meta.env.BASE_URL || '/';
-
 export const languages = {
-  en: { name: 'ENG', slug: 'en', img: `${BASE_URL}/img/icons/uk.png` },
-  de: { name: 'DEU', slug: 'de', img: `${BASE_URL}/img/icons/deu.png` },
-  fr: { name: 'FRA', slug: 'fr', img: `${BASE_URL}/img/icons/fra.png` },
-  ru: { name: 'РУС', slug: 'ru', img: `${BASE_URL}/img/icons/rus.png` },
-  be: { name: 'БЕЛ', slug: 'be', img: `${BASE_URL}/img/icons/by.png` }
+  en: { name: 'ENG', slug: 'en', img: `/img/icons/uk.png` },
+  de: { name: 'DEU', slug: 'de', img: `/img/icons/deu.png` },
+  fr: { name: 'FRA', slug: 'fr', img: `/img/icons/fra.png` },
+  ru: { name: 'РУС', slug: 'ru', img: `/img/icons/rus.png` },
+  be: { name: 'БЕЛ', slug: 'be', img: `/img/icons/by.png` }
 };
 
 export const defaultLocale = 'en';

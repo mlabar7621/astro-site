@@ -6,7 +6,7 @@ export default function DownloadButton({ file, label }) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const filePath = `${import.meta.env.BASE_URL}${file}`;
+    const filePath = `${file}`;
 
     console.log(filePath);
 
@@ -26,7 +26,7 @@ export default function DownloadButton({ file, label }) {
 
   function handleDownload() {
     const a = document.createElement('a');
-    const filePath = `${import.meta.env.BASE_URL}${file}`;
+    const filePath = `${file}`;
     a.href = filePath;
     a.download = fileName;
     a.click();

@@ -24,9 +24,9 @@ export async function get({ request }) {
   const rss = `
     <rss version="2.0">
       <channel>
-        <title>Your Blog Title</title>
-        <link>https://yourdomain.com/</link>
-        <description>Your blog description</description>
+        <title>Mikhail Labar's Personal Blog</title>
+        <link>https://mikhail-labar.com/</link>
+        <description>Mikhail Labar's Personal Blog</description>
         ${items.map(item => `
           <item>
             <title>${item.title}</title>

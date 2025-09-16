@@ -111,7 +111,6 @@ const certificationsURL = getRelativeLocaleUrl(locale, 'certifications');
 	.pc-nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
-		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
 	.folder-title a {
@@ -121,9 +120,9 @@ const certificationsURL = getRelativeLocaleUrl(locale, 'certifications');
 		display: flex;
 		gap: 10px;
 	}
-	.header-item .active, .folder-title .active {
+	.header-item .active, .folder-title:has(.active) {
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		border-bottom: 4px solid var(--accent);
 	}
 	.folder-content {
 		opacity: 0;

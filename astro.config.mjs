@@ -6,8 +6,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://mlabar7621.github.io',
-	base: '/astro-site',
+	site: 'https://mikhail-labar.com',
+	base: '',
 	integrations: [mdx(), sitemap(), react()],
 	i18n: {
     	locales: ["en", "fr", "de", "ru", "be"],
