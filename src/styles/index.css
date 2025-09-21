@@ -1,7 +1,12 @@
 .row-block {
     display: flex;
     gap: 2rem;
-    height: 35rem;
+    margin-bottom: 2rem;
+}
+@media (max-width: 600px) {
+    .row-block {
+        flex-direction: column;
+    }
 }
 .row-block div {
     flex: 1;
@@ -28,4 +33,7 @@
 }
 .hero-image {
     width: 100%;
+}
+.hero{
+    margin-bottom: 2rem;
 }
