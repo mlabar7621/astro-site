@@ -25,13 +25,9 @@ March 2025 - July 2025
 
 ## Skills
 ---
-### Programming Languages
-
-C#, C++, Java, JS, Ruby, MATLAB, Python, HTML, CSS, Liquid
-
 ### Software
 
-Solidworks, Autodesk Fusion, Adobe Premiere Pro, Adobe Photoshop, Linux
+MS Office, Solidworks, Autodesk Fusion, Adobe Premiere Pro, Adobe Photoshop, Linux, Tableau
 
 ### Manufacturing
 
@@ -39,11 +35,15 @@ Soldering, 3D Printing, Laser Cutting, Photolithography, CNC machining, Woodwork
 
 ### Artificial Intelligence
 
-Stable Diffusion, Torch AI library, Google Colab, Llama 3
+Model Fine-Tuning, Model Context Protocols, Local Hosting, Torch AI library, Llama
 
 ### Languages
 
 English, Russian, Belarusian, French, German
+
+### Programming Languages
+
+C#, C++, Java, JS, Ruby, MATLAB, Python, HTML, CSS, Liquid
 
 ### Soft Skills
 
@@ -66,7 +66,21 @@ May 2024 - Present
 
 <span class="date-wrapper">
 
-### Diode Fabrication Project, Hochschule München
+### Personal Website
+
+December 2024 - Present
+
+</span>
+
+*Owner, Developer*
+
+- Designed Astro and Liquid files to create a beautiful, maintanable, scalable, mobile-friendly website
+- Configured hosting and DNS routing to utilize custom domain
+- Integrated partial hydration to allow for interactive components while minimizing server-side rendering
+
+<span class="date-wrapper">
+
+### Silicon Diode Fabrication Project, Hochschule München
 
 March 2025 - June 2025
 
@@ -74,10 +88,24 @@ March 2025 - June 2025
 
 *Team Member*
 
-- Fabricated 200 np-junction diodes on a 4-inch silicon wafer
+- Fabricated 200 silicon junction diodes on a 4-inch silicon wafer
 - Designed masks and process flow
 - Used oxidation, lithography, thermal evaporation, and wet etching to create micrometer-scale structures
 - Used ball-wedge and wedge-wedge bonding to evaluate function of final structures
+
+<span class="date-wrapper">
+
+### Vega Refrigerator Repair
+
+December 2024 - February 2025
+
+</span>
+
+*Junior Technician*
+
+- Collaborated with senior technicians to repair refrigerator sealed systems
+- Took calls from and managed appointments with clients
+- Utilized Field Service Management Software to simplify payment and receipt generation
 
 <span class="date-wrapper">
 
@@ -105,6 +133,19 @@ February 2024 - November 2024
 - Participated in the creation of a small-scale lab device for blood sepsis detection
 - Manufactured PZT crystals into piezo elements using powder blasting techniques
 - Worked in BSL2 lab and cleanroom settings, followed accompanying safety procedures
+
+<span class="date-wrapper">
+
+### First Person View Drone Build Project
+
+May 2024 - August 2024
+
+</span>
+
+*Builder, Pilot*
+
+- Designed, built, and configured drone to receive radio controls and transmit live video
+- Designed and 3D printed camera mount for filming cinematic shots
 
 <span class="date-wrapper">
 
@@ -137,13 +178,171 @@ January 2024 - May 2024
 
 <span class="date-wrapper">
 
-### First Person View Drone Build Project
+### Deloitte Consulting Undergraduate Mock Case Competition
 
-May 2024 - August 2024
+February 2024
 
 </span>
 
-*Builder, Pilot*
+*Team Lead*
 
-- Designed, built, and configured drone to receive radio controls and transmit live video
-- Designed and 3D printed camera mount for filming cinematic shots
+- Developed and presented a future business strategy for a mock client based on past financial statements and market trends in under 24 hours
+
+## Courses
+---
+### Engineering
+<span class="class-wrapper">
+
+Semiconductor and Thin Film Technology
+
+A+
+
+</span>
+
+<span class="class-wrapper">
+
+Printed Electronics
+
+A+
+
+</span>
+
+<span class="class-wrapper">
+
+Internal Combustion Engines
+
+A
+
+</span>
+
+<span class="class-wrapper">
+
+Thermodynamics
+
+A
+
+</span>
+
+<span class="class-wrapper">
+
+Statistical Methods for Engineering
+
+A-
+
+</span>
+
+<span class="class-wrapper">
+
+Dynamics
+
+A+
+
+</span>
+
+<span class="class-wrapper">
+
+Mechanics 2
+
+A+
+
+</span>
+
+<span class="class-wrapper">
+
+Mechanics 1
+
+A+
+
+</span>
+
+### Business
+
+<span class="class-wrapper">
+
+Business Finance
+
+A-
+
+</span>
+
+<span class="class-wrapper">
+
+Accounting I
+
+A
+
+</span>
+
+<span class="class-wrapper">
+
+Microeconomics
+
+A
+
+</span>
+
+<span class="class-wrapper">
+
+Macroeconomics
+
+A
+
+</span>
+
+### General 
+
+<span class="class-wrapper">
+
+Physics III: Waves, Optics, Relativity
+
+A+
+
+</span>
+
+<span class="class-wrapper">
+
+General Chemistry for Engineers
+
+A
+
+</span>
+
+<span class="class-wrapper">
+
+Differential Equations for Engineers
+
+B+
+
+</span>
+
+<span class="class-wrapper">
+
+Calculus III
+
+A
+
+</span>
+
+<span class="class-wrapper">
+
+Academic Writing
+
+A+
+
+</span>
+
+<span class="class-wrapper">
+
+Technical Writing
+
+A-
+
+</span>
+
+<span class="class-wrapper">
+
+Engineering Ethics
+
+A
+
+</span>

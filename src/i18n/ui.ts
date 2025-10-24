@@ -3,7 +3,7 @@ export const languages = {
   de: { name: 'DEU', slug: 'de', img: `/img/icons/deu.png` },
   fr: { name: 'FRA', slug: 'fr', img: `/img/icons/fra.png` },
   ru: { name: 'РУС', slug: 'ru', img: `/img/icons/rus.png` },
-  be: { name: 'БЕЛ', slug: 'be', img: `/img/icons/by.png` }
+  be: { name: 'БЕЛ', slug: 'be', img: `/img/icons/by_alt.png` }
 };
 
 export const defaultLocale = 'en';

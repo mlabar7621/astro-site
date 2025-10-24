@@ -3,7 +3,7 @@
 
 # Mikhail Labar
 
-## Education in Russian
+## Education in Belarusian
 ---
 <span class="date-wrapper">
 

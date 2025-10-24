@@ -6,6 +6,13 @@
         text-align: end;
     }
 }
+.class-wrapper {
+    display: flex;
+    justify-content: space-between;
+    p {
+        min-width: 23px;
+    }
+}
 h3 {
     font-size: 20px;
 }
