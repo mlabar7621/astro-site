@@ -14,7 +14,7 @@ import Footer from '@components/Footer.astro';
 import PostSelector from '@components/PostSelector.astro';
 import '@styles/blog_index.css'
 
-//gernerates page paths
+//generates page paths
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
   // Map over locales and collect promises
   const allPaths = await Promise.all(

@@ -16,37 +16,14 @@ export async function getStaticPaths() {
 const { locale } = Astro.props;
 
 //load article info. aliases do not work here.
-const loaders = import.meta.glob('/src/content/base/*/contact.md');
-const loader = loaders[`/src/content/base/${locale}/contact.md`];
-const Article = await loader() as any;
+const loaders = (import.meta as any).glob('/src/content/base/*/contact.json');
+const loader = loaders[`/src/content/base/${locale}/contact.json`];
+let cards: any[] = [];
+if (loader) {
+	const mod = await loader();
+	cards = (mod && (mod as any).default) ? (mod as any).default as any[] : mod as any[];
+}
 ---
-
-<style>
-    #social-mastodon:hover {
-		color: #6364FF;
-	}
-	#social-github:hover {
-		color: #000000;
-	}
-	#social-instagram:hover {
-		color: #C13584;
-	}
-	#social-facebook:hover {
-		color: #1877F2;
-	}
-	#social-linkedin:hover {
-		color: #0077B5;
-	}
-	#social-whatsapp:hover {
-		color: #25D366;
-	}
-	#social-telegram:hover {
-		color: #24A1DE;
-	}
-	#social-email:hover {
-		color: rgb(var(--gray-dark));
-	}
-</style>
 
 <html lang={locale}>
 	<head>
@@ -55,10 +32,158 @@ const Article = await loader() as any;
     <body>
         <Header />
         <main>
-            <article>
-                <Article.Content />
-            </article>
+			<div class="card-grid">
+				{cards.map((item) => (
+					<a href={item.link} class="card" id={`social-${item.title}`}>
+						<h3>{item.title}</h3>
+						<div class="icon-wrapper">
+							<svg class="icon" viewBox="0 0 16 16" fill="currentColor" id={item.icon} xmlns="http://www.w3.org/2000/svg">
+								<path d={item.svgPath}></path>
+							</svg>
+						</div>
+						<p class="details">{item.content}</p>
+					</a>
+				))}
+			</div>
         </main>
         <Footer />
     </body>
 </html>
+
+<style>
+    #social-Mastodon svg {
+		color: #6364FF;
+	}
+	#social-Github svg {
+		color: #000000;
+	}
+	#social-Instagram svg {
+		color: #C13584;
+	}
+	#social-Facebook svg {
+		color: #1877F2;
+	}
+	#social-LinkedIn svg {
+		color: #0077B5;
+	}
+	#social-Whatsapp svg {
+		color: #25D366;
+	}
+	#social-Telegram svg {
+		color: #24A1DE;
+	}
+	#social-Email svg {
+		color: rgb(var(--gray-dark));
+	}
+	#social-Mastodon:hover {
+		background-color: #6364FF;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-Github:hover {
+		background-color: #000000;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-Instagram:hover {
+		background-color: #C13584;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-Facebook:hover {
+		background-color: #1877F2;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-LinkedIn:hover {
+		background-color: #0077B5;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-Whatsapp:hover {
+		background-color: #25D366;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-Telegram:hover {
+		background-color: #24A1DE;
+		svg{
+			color: #ffffff;
+		}
+	}
+	#social-Email:hover {
+		background-color: rgb(var(--gray-dark));
+		svg{
+			color: #ffffff;
+		}
+	}
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1.5rem;
+		padding: 2rem;
+	}
+	.card {
+		background: #ffffff;
+		border: 1px solid #eaeaea;
+		border-radius: 8px;
+		padding: 1.5rem;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+		text-decoration: none;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		h3 {
+			color:rgb(var(--black));
+		}
+  	}
+	.icon-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		inset: 0;
+		padding: 1rem 0;
+	}	
+	.card:hover {
+    	color: #ffffff;
+    	transform: translateY(-5px);
+
+		.details {
+			opacity: 1; 
+			transform: translateY(0); 
+		}
+
+		.icon {
+			transform: scale(0.8) translateY(-40px);
+			color: #ffffff;
+		}
+
+		h3 {
+			color: #ffffff;
+		}
+	}
+	.details {
+		opacity: 0; 
+    	transform: translateY(20px); 
+    	transition: opacity 0.3s ease, transform 0.3s ease;
+		position: absolute;
+		bottom: 0;
+		color: #ffffff;
+	}
+	.icon {
+		width: 80%;
+		height: auto;
+		transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+		pointer-events: none;
+		position: relative;
+	}
+</style>

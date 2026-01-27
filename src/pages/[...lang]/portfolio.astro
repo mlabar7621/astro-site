@@ -14,36 +14,67 @@ export async function getStaticPaths() {
 const { locale } = Astro.props;
 
 // load article info, aliases do not work here
-const loaders = import.meta.glob('/src/content/base/*/portfolio.mdx');
-const loader = loaders[`/src/content/base/${locale}/portfolio.mdx`];
-const Article = await loader() as any;
-
+const loaders = (import.meta as any).glob('/src/content/base/*/portfolio.json');
+const loader = loaders[`/src/content/base/${locale}/portfolio.json`];
+let cards: any[] = [];
+if (loader) {
+	const mod = await loader();
+	cards = (mod && (mod as any).default) ? (mod as any).default as any[] : mod as any[];
+}
 ---
 
 <style>
-    @media (min-width: 721px) {
-        article {
+    .card-masonry{
+		column-count: 1;
+        column-gap: 0.5rem;
+        width: 100%;
+	}
+    @media (min-width: 1024px) {
+        .card-masonry {
             column-count: 3;
         }
     }
-    @media (max-width: 720px) {
-        article {
+    @media (min-width: 601px) and (max-width: 1023px) {
+        .card-masonry {
             column-count: 2;
         }
     }
-    @media (max-width: 600px) {
-        article { 
-            column-count: 1;
-        }
+	.card {
+		break-inside: avoid;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+  	}
+    .overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background-color: rgba(0, 0, 0, 0.3); /* Darken slightly */
+        backdrop-filter: blur(0px); /* Start with no blur */
+
+        opacity: 0;
+        transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
     }
-    article {
-        column-gap: 10px;
-        p {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0;
-        }
+
+    .card:hover .overlay {
+        opacity: 1;
+        backdrop-filter: blur(8px); /* The frosted glass look */
+    }
+
+    .overlay h3 {
+        color: #ffffff;
+        margin: 0 1rem;
+    }
+    
+    .details {
+        color: #ffffff;
+        margin: 0 1rem;
     }
 </style>
 
@@ -55,9 +86,20 @@ const Article = await loader() as any;
     <body>
         <Header />
         <main>
-            <article>
-                <Article.Content />
-            </article>
+            <div class="card-masonry">
+				{cards.map((item) => (
+                    <div class="card">
+                        <a href={`/${locale}/blog/${item.blogPostSlug}`}>
+                            <img src={item.imgPath} />
+
+                            <div class="overlay">
+                                <h3>{item.title}</h3>
+                                <p class="details">{item.description}</p>
+                            </div>
+                        </a>
+                    </div>
+                ))}
+            </div>
         </main>
         <Footer />
     </body>

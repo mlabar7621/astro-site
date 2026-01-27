@@ -50,13 +50,13 @@ ul li a {
     border: 2px solid rgba(var(--gray));
     border-radius: 10px;
     color: rgb(var(--gray));
-    padding: 0px 4px;
+    padding: 3px;
     line-height: initial;
+    height: fit-content;
 }
 .title-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 ul li a:hover h4,
 ul li a:hover .date {

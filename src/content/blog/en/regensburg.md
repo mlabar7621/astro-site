@@ -1,7 +1,7 @@
 ---
 title: 'Regensburg'
 pubDate: 2025-06-21
-heroImage: '/img/posts/IMG_4280.jpg'
+heroImage: '/img/posts/regensburg-bridge.jpg'
 tag: 'Travel'
 draft: false
 rating: 5

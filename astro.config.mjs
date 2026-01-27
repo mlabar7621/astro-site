@@ -17,14 +17,14 @@ export default defineConfig({
 		}
   	},
 	vite: {
-    resolve: {
-      alias: {
-        '@layouts': '/src/layouts',
-        '@components': '/src/components',
-		'@i18n': '/src/i18n',
-		'@styles': '/src/styles',
-      	"@content": '/src/content'
-      }
-    }
-  }
+    	resolve: {
+      		alias: {
+        		'@layouts': '/src/layouts',
+        		'@components': '/src/components',
+				'@i18n': '/src/i18n',
+				'@styles': '/src/styles',
+      			"@content": '/src/content'
+      		}
+    	}	
+  	}
 });
