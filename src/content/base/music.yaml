@@ -1,0 +1,433 @@
+classical:
+  - id: 2026-04-24-scheherazade
+    title: Scheherazade
+    opus: Op. 35
+    status: 
+      complete: false
+      heard_movements: [2]
+    composer: Nikolai Rimsky-Korsakov
+    performers: 
+      orchestra: Chamber Music Student Group
+      conductor:
+    date: 2026-04-24
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-24-eight
+    title: Eight Pieces for Clarinet, Viola, and Piano
+    opus: Op. 83
+    status: 
+      complete: false
+      heard_movements: [6, 7]
+    composer: Max Bruch
+    performers: 
+      orchestra: Chamber Music Student Group
+      conductor:
+    date: 2026-04-24
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-24-wind
+    title: Wind Quintet in G Minor
+    opus: Op. 3
+    status: 
+      complete: false
+      heard_movements: [1]
+    composer: Paul Taffanel
+    performers: 
+      orchestra: Chamber Music Student Group
+      conductor:
+    date: 2026-04-24
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-24-string
+    title: String Quartet No. 10 in E-Flat Major
+    opus: 'Op. 51 "Slavonic"'
+    status: 
+      complete: false
+      heard_movements: [2]
+    composer: Antonin Dvorak
+    performers: 
+      orchestra: Chamber Music Student Group
+      conductor:
+    date: 2026-04-24
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-01-bapang
+    title: Bapang Selisir
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Traditional
+    performers: 
+      orchestra: UMD Balinese Gamelin Ensemble
+      conductor: I Nyoman Suadin
+    date: 2026-05-01
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-01-gambang
+    title: Gambang Suling
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Ki Nartosabdho
+    performers: 
+      orchestra: UMD Balinese Gamelin Ensemble
+      conductor: I Nyoman Suadin
+    date: 2026-05-01
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-01-pendet
+    title: Pendet Sukarno
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: I Ketut Kokek
+    performers: 
+      orchestra: UMD Balinese Gamelin Ensemble
+      conductor: I Nyoman Suadin
+    date: 2026-05-01
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-01-gilak
+    title: Gilak
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: I Nyoman Suadin
+    performers: 
+      orchestra: UMD Balinese Gamelin Ensemble
+      conductor: I Nyoman Suadin
+    date: 2026-05-01
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-02-beethoven
+    title: Symphony No. 9 in D. Minor
+    opus: Op. 125
+    status: 
+      complete: true
+      heard_movements:
+    composer: Ludwig van Beethoven
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor: David Neely
+    date: 2026-05-02
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-27-mozart
+    title: Symphony No. 39 in E-Flat Major
+    opus: K. 543
+    status: 
+      complete: true
+      heard_movements:
+    composer: Wolfgang Amadeus Mozart
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor: David Neely
+    date: 2026-02-27
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-27-tower
+    title: Flute Concerto
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Joan Tower
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor: David Neely
+    date: 2026-02-27
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-27-wagner
+    title: Suite from Die Meistersinger von Nürnberg
+    opus: WWV 96
+    status: 
+      complete: false
+      heard_movements: [3]
+    composer: Richard Wagner
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor: David Neely
+    date: 2026-02-27
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-28-feierlicher
+    title: Feierlicher Einzug der Ritter des Johanniter-Ordens
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Richard Strauss
+    performers: 
+      orchestra: UMD Wind Orchestra
+      conductor: David Neely
+    date: 2026-02-28
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-28-divertissement
+    title: Divertissement
+    opus: Op. 36
+    status: 
+      complete: true
+      heard_movements:
+    composer: Émile Bernard
+    performers: 
+      orchestra: UMD Wind Orchestra
+      conductor: David Neely
+    date: 2026-02-28
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-28-fast
+    title: 'Fast Track: Concerto for Percussion and Wind Ensemble'
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Joseph Schwantner
+    performers: 
+      orchestra: UMD Wind Orchestra
+      conductor: David Neely
+    date: 2026-02-28
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-02-28-circus
+    title: 'Symphony No. 3, Circus Maximus'
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: John Corigliano
+    performers: 
+      orchestra: UMD Wind Orchestra
+      conductor: David Neely
+    date: 2026-02-28
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-03-06-nature
+    title: "In Nature's Realm"
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Antonin Dvorák
+    performers: 
+      orchestra: Baltimore Symphony Orchestra
+      conductor: Jonathan Heyward
+    date: 2026-03-06
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-03-06-silver
+    title: An Everywhere of Silver
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Grace-Evangeline Mason
+    performers: 
+      orchestra: Baltimore Symphony Orchestra
+      conductor: Jonathan Heyward
+    date: 2026-03-06
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-03-06-lied
+    title: Das Lied von der Erde
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Gustav Mahler
+    performers: 
+      orchestra: Baltimore Symphony Orchestra
+      conductor: Jonathan Heyward
+    date: 2026-03-06
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-10-serenade
+    title: Serenade No. 10 in B-flat
+    opus: 'K. 361/370a, "Gran Partita"'
+    status: 
+      complete: true
+      heard_movements:
+    composer: Wolfgang Amadeus Mozart
+    performers: 
+      orchestra: UMD Symphony Orchestra, UMD Wind Orchestra
+      conductor: Giovani T. Clarke, James Gates, Erick Von Sas
+    date: 2026-04-10
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-10-tragic
+    title: Tragic Overture
+    opus: Op. 81
+    status: 
+      complete: true
+      heard_movements:
+    composer: Johannes Brahms
+    performers: 
+      orchestra: UMD Symphony Orchestra, UMD Wind Orchestra
+      conductor: Alexander Kandybin
+    date: 2026-04-10
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-10-boheme
+    title: Selections from La Bohème
+    opus: 
+    status: 
+      complete: false
+      heard_movements: [3]
+    composer: Giacomo Puccini
+    performers: 
+      orchestra: UMD Symphony Orchestra, UMD Wind Orchestra
+      conductor: Andrew Samlal
+    date: 2026-04-10
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-10-sorcerer
+    title: "The Sorcerer's Apprentice"
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: Paul Dukas
+    performers: 
+      orchestra: UMD Symphony Orchestra, UMD Wind Orchestra
+      conductor: Darren Lin
+    date: 2026-04-10
+    venue: Clarice Smith Performing Arts Center
+  - id: 2025-06-07-atmospheres
+    title: Atmosphères
+    opus: 
+    status: 
+      complete: true
+      heard_movements:
+    composer: György Ligeti
+    performers: 
+      orchestra: Munich Philharmonic
+      conductor: Lahav Shani
+    date: 2025-06-07
+    venue: Gasteig HP8 Culture Centre
+  - id: 2025-06-07-violin
+    title: Violin Concerto in D major
+    opus: K053
+    status: 
+      complete: true
+      heard_movements:
+    composer: Igor Stravinsky
+    performers: 
+      orchestra: Munich Philharmonic
+      conductor: Lahav Shani
+    date: 2025-06-07
+    venue: Gasteig HP8 Culture Centre
+  - id: 2025-06-07-symphony
+    title: Symphony No. 2 in D Major
+    opus: Op. 73
+    status: 
+      complete: true
+      heard_movements:
+    composer: Johannes Brahms
+    performers: 
+      orchestra: Munich Philharmonic
+      conductor: Lahav Shani
+    date: 2025-06-07
+    venue: Gasteig HP8 Culture Centre
+  - id: 2026-04-12-dance
+    title: Dance of the Jesters
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Pyotr Ilyich Tchaikovsky
+    performers: 
+      orchestra: UMD University Band
+      conductor: Giovanni Clarke
+    date: 2026-04-12
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-12-piano
+    title: Piano Quartet in E-flat Major
+    opus: K. 493
+    status: 
+      complete: true
+      heard_movements:
+    composer: Wolfgang Amadeus Mozart
+    performers: 
+      orchestra: Espressivo! Quartet
+      conductor:
+    date: 2026-04-12
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-12-joy
+    title: "Joy Steppin'"
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Nokuthula Ngwenyama
+    performers: 
+      orchestra: Espressivo! Quartet
+      conductor:
+    date: 2026-04-12
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-04-12-piano-brahms
+    title: Piano Quartet No. 1 in G minor
+    opus: Op. 25
+    status: 
+      complete: true
+      heard_movements:
+    composer: Johannes Brahms
+    performers: 
+      orchestra: Espressivo! Quartet
+      conductor:
+    date: 2026-04-12
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-09-bach
+    title: Sonata No. 1 in G minor
+    opus: BWV 1001
+    status: 
+      complete: false
+      heard_movements: [1]
+    composer: Johann Sebastian Bach
+    performers: 
+      orchestra: Zoe Schauder
+      conductor:
+    date: 2026-05-09
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-09-chopin
+    title: Ballade No. 3 in A-flat major
+    opus: Op. 47
+    status: 
+      complete: true
+      heard_movements:
+    composer: Frédéric Chopin
+    performers: 
+      orchestra: Amy Meng
+      conductor:
+    date: 2026-05-09
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-09-vieuxtemps
+    title: Violin Converto No. 4 in D minor
+    opus: Op. 31
+    status: 
+      complete: false
+      heard_movements: [1]
+    composer: Henri Vieuxtemps
+    performers: 
+      orchestra: Zoe Schauder, Amy Meng
+      conductor:
+    date: 2026-05-09
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-05-09-franck
+    title: Sonata in A major for Violin and Piano
+    opus:
+    status: 
+      complete: false
+      heard_movements: [4]
+    composer: César Franck
+    performers: 
+      orchestra: Zoe Schauder, Amy Meng
+      conductor:
+    date: 2026-05-09
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-01-31-brahms
+    title: Double Concerto in A minor
+    opus: Op. 102
+    status: 
+      complete: true
+      heard_movements:
+    composer: Johannes Brahms
+    performers: 
+      orchestra: National Symphony Orchestra
+      conductor: Gianandrea Noseda
+    date: 2026-01-31
+    venue: Kennedy Center
+  - id: 2026-01-31-scriabin
+    title: 'Symphony No. 3 in C minor, "La Poème Divin"'
+    opus: Op. 43
+    status: 
+      complete: true
+      heard_movements:
+    composer: Alexander Scriabin
+    performers: 
+      orchestra: National Symphony Orchestra
+      conductor: Gianandrea Noseda
+    date: 2026-01-31
+    venue: Kennedy Center
