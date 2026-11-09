@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 const { locale } = Astro.props;
 
 // load article info, aliases do not work here
-const loaders = (import.meta as any)['glob']('/src/content/base/*/about.mdx');
+const loaders = import.meta.glob('/src/content/base/*/about.mdx');
 const loader = loaders[`/src/content/base/${locale}/about.mdx`];
 const Article = await loader() as any;
 

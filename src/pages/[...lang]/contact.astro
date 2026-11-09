@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 const { locale } = Astro.props;
 
 //load article info. aliases do not work here.
-const loaders = (import.meta as any).glob('/src/content/base/*/contact.json');
+const loaders = import.meta.glob('/src/content/base/*/contact.json');
 const loader = loaders[`/src/content/base/${locale}/contact.json`];
 let cards: any[] = [];
 if (loader) {
