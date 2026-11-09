@@ -431,3 +431,87 @@ classical:
       conductor: Gianandrea Noseda
     date: 2026-01-31
     venue: Kennedy Center
+  - id: 2026-11-06-stravinsky
+    title: 'The Firebird Suite'
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Igor Stravinsky
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor: David Neely
+    date: 2026-11-06
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-11-06-verdi
+    title: 'Overture to La forza del destino'
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Giuseppe Verdi
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor: David Neely
+    date: 2026-11-06
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-11-07-holst
+    title: 'A Moorside Suite'
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Gustav Holst
+    performers: 
+      orchestra: UMD Wind Orchestra
+      conductor:  Michael Votta, Jr
+    date: 2026-11-07
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-11-07-krenek
+    title: 'Three Merry Marches'
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Ernst Krenek
+    performers: 
+      orchestra: UMD Wind Orchestra
+      conductor:  Michael Votta, Jr
+    date: 2026-11-07
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-10-03-rimsky
+    title: 'Capriccio Espagnol'
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Nikolai Rimsky-Korsakov
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor:  David Neely
+    date: 2026-10-03
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-10-03-beethoven
+    title: 'Symphony No. 3 in E-flat Major, “Eroica”'
+    opus: Op. 55
+    status: 
+      complete: true
+      heard_movements:
+    composer: Ludwig van Beethoven
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor:  David Neely
+    date: 2026-10-03
+    venue: Clarice Smith Performing Arts Center
+  - id: 2026-10-02-beethoven
+    title: 'Fifteen: Symphonic Fantasy on the Art of Andy Warhol'
+    opus:
+    status: 
+      complete: true
+      heard_movements:
+    composer: Michael Daugherty
+    performers: 
+      orchestra: UMD Symphony Orchestra
+      conductor:  Michael Votta, Jr.
+    date: 2026-10-02
+    venue: Clarice Smith Performing Arts Center
